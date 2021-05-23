@@ -1,0 +1,1 @@
+#define SBINDIR "/test/sbin"

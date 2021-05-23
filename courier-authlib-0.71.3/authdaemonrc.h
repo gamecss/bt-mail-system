@@ -1,0 +1,5 @@
+#define AUTHDAEMONRC "/test/etc/authlib/authdaemonrc"
+#define AUTHDAEMONVAR "/test/var/spool/authdaemon"
+#define AUTHDAEMONPID AUTHDAEMONVAR "/pid"
+#define AUTHDAEMONSOCK AUTHDAEMONVAR "/socket"
+#define AUTHDAEMONLOCK AUTHDAEMONVAR "/lock"

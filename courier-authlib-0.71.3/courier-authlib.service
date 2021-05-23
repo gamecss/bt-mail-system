@@ -1,0 +1,11 @@
+[Unit]
+Description=Courier Authentication Library
+
+[Service]
+Type=forking
+RemainAfterExit=true
+ExecStart=/test/share/courier-authlib.sysvinit start
+ExecStop=/test/share/courier-authlib.sysvinit stop
+
+[Install]
+WantedBy=multi-user.target

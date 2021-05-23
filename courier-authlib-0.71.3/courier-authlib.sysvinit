@@ -1,0 +1,51 @@
+#! /bin/sh
+#
+# chkconfig: 2345 15 85
+# description: Authlib - Courier authentication library.
+#
+#
+
+prefix="/test"
+exec_prefix="/test"
+sysconfdir="/test/etc"
+sbindir="/test/sbin"
+
+if test ! -f /test/etc/authlib/authdaemonrc
+then
+	echo "/test/etc/authlib/authdaemonrc does not exist, forgot make install-configure?"
+	exit 1
+fi
+
+case "$1" in
+start)
+        cd /
+        # Start daemons.
+        touch /var/lock/subsys/courier-authlib
+
+        echo -n "Starting Courier authentication services:"
+
+	$sbindir/authdaemond start
+
+	echo " authdaemond"
+        ;;
+stop)
+        echo -n "Stopping Courier authentication services:"
+
+	$sbindir/authdaemond stop
+
+	echo " authdaemond"
+        rm -f /var/lock/subsys/courier-authlib
+        ;;
+restart)
+	$0 stop
+	$0 start
+        ;;
+reload)
+        echo -n "Starting Courier authentication services:"
+
+	$sbindir/authdaemond restart
+
+	echo " authdaemond"
+        ;;
+esac
+exit 0

@@ -1,0 +1,3 @@
+{ global:
+courier_authuserdb_init;
+local: *; };

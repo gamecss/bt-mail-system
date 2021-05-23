@@ -1,0 +1,3 @@
+{ global:
+auth_sasl_client;
+local: *; };

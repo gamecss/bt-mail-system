@@ -1,0 +1,17 @@
+#! /bin/sh
+#
+#
+# Copyright 1998 - 2004 Double Precision, Inc.  See COPYING for
+# distribution information.
+#
+# Courier authentication daemon startup script.
+
+prefix=/test
+exec_prefix=/test
+sbindir=/test/sbin
+localstatedir=/test/var
+
+set -a
+. /test/etc/authlib/authdaemonrc
+
+exec ${sbindir}/courierlogger -pid=/test/var/spool/authdaemon/pid $LOGGEROPTS -$1 /test/libexec/courier-authlib/authdaemond

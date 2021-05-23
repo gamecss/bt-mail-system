@@ -1,0 +1,5 @@
+{ global:
+auth_sasl;
+auth_sasl_ex;
+auth_sasl_extract_userid;
+local: *; };
